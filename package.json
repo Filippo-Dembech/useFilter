@@ -1,0 +1,26 @@
+{
+    "name": "usefilter",
+    "version": "1.0.0",
+    "description": "A hook to filter list of objects in React.",
+    "main": "index.js",
+    "module": "index.mjs",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/use-filter.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "react",
+        "hook",
+        "custom-hook",
+        "useFilter"
+    ],
+    "author": "Filippo Dembech",
+    "license": "ISC",
+    "type": "commonjs",
+    "peerDependencies": {
+        "react": ">=16.8.0"
+    }
+}
