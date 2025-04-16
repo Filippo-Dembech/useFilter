@@ -1,12 +1,12 @@
 {
-    "name": "usefilter",
+    "name": "usefiltex",
     "version": "1.0.0",
     "description": "A hook to filter list of objects in React.",
     "main": "index.js",
     "module": "index.mjs",
     "repository": {
         "type": "git",
-        "url": "https://github.com/yourusername/use-filter.git"
+        "url": "https://github.com/Filippo-Dembech/useFilter.git"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
