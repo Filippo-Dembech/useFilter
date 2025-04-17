@@ -1,6 +1,6 @@
 {
     "name": "usefiltex",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A hook to filter list of objects in React.",
     "main": "index.js",
     "module": "index.mjs",
