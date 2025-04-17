@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export function filter(name, filter) {
     return {
@@ -56,6 +56,11 @@ export function useFilter({ list, filters: fltrs = [] }) {
 
     const [filteredList, setFilteredList] = useState(list);
     const originalList = useRef(list);
+
+    useEffect(() => {
+        originalList.current = list;
+        setFilteredList(list);
+    }, [list])
 
     function setActivityOf(filterName, payload = null, activity) {
         setFilters((filters) =>
