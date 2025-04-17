@@ -99,10 +99,16 @@ export function useFilter({ list, filters: fltrs = [] }) {
             });
         },
     };
+    
+    function getFilter(name) {
+        if (name?.toLowerCase() === "all")
+            return filters 
+        return filters.filter(filter => filter.name === name)[0]
+    }
 
     return {
-        _: filteredList,
+        filtered: filteredList,
         manager,
-        filters,
+        getFilter,
     };
 }
