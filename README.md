@@ -202,6 +202,8 @@ function Books() {
 
 When the user clicks on the _Filter_ button, the declared `"year"` filter will be applied and immediately activated, showing only _Sapiens - by Yuval Noah Harari_.
 
+> **NOTE**: Use function expressions with `const` instead of using function declarations with the `function` keyword.
+
 ### Multiple Filters
 
 Let's imagine we want to obtain all the _fantasy books_ published _after the year 1990_:
