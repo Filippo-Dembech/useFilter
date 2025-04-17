@@ -185,7 +185,7 @@ function Books() {
     ]
   })
   
-  function filter() {
+  const filter = () => {
     manager
       .apply("year")  // apply the 'year' filter
       .activate()     // activate all the applied filters
@@ -221,7 +221,7 @@ function Books() {
     ]
   })
   
-  function filter() {
+  const filter = () => {
     manager
       .apply("fantasy") // apply the 'fantasy' filter
       .apply("year")    // apply the 'year' filter
@@ -256,15 +256,15 @@ function Books() {
     ]
   })
   
-  function applyFantasyFilter() {
+  const applyFantasyFilter = () => {
     manager.apply("fantasy") // apply the 'fantasy' filter
   }
 
-  function applyYearFilter() {
+  const applyYearFilter = () => {
     manager.apply("year") // apply the 'year' filter
   }
   
-  function activateFilter() {
+  const activateFilter = () => {
     manager
       .activate() // activte all the applied filters
   }
@@ -304,12 +304,12 @@ function Books() {
     ]
   })
   
-  function applyFilter() {
+  const applyFilter = () => {
     manager.
       toggle("Fantasy") // toggle filter
   }
   
-  function filter() {
+  const filter = () => {
     manager
       .activate() // activte all the applied filters
   }
@@ -347,17 +347,17 @@ function Books() {
     ]
   });
   
-  function filterByAuthor() {
+  const filterByAuthor = () => {
     manager
       .apply("byAuthor", "Kyle")  // search for "Kyle" in the author name
   }
   
-  function filterByYear() {
+  const filterByYear = () => {
     manager
       .apply("yearRange", [2010, 2020])    // Year between 2010 and 2020
   }
   
-  function filter() {
+  const filter = () => {
     manager
       .activate();
   }
