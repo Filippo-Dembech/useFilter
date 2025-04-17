@@ -33,8 +33,10 @@ export function filter(name, filter) {
  *
  * Arrays would force the user to rely on the positional order of returned values, making the code harder to read and maintain.
  * Using object destructuring with `_` promotes semantic clarity while keeping the hook flexible and decoupled from the data's meaning.
+ * 
+ * @param {{list, filters}}  
+ * @returns { _, manager, filters }
  */
-
 export function useFilter({ list, filters: fltrs = [] }) {
     const [filters, setFilters] = useState(() =>
         fltrs.map((filter) => ({
@@ -97,10 +99,16 @@ export function useFilter({ list, filters: fltrs = [] }) {
             });
         },
     };
+    
+    function getFilter(name) {
+        if (name?.toLowerCase() === "all")
+            return filters 
+        return filters.filter(filter => filter.name === name)[0]
+    }
 
     return {
-        _: filteredList,
-        filters,
+        filtered: filteredList,
         manager,
+        getFilter,
     };
 }
