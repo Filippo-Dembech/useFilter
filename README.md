@@ -71,7 +71,6 @@ useFilter({
 ```
 
 > **NOTE**: To declare a filter use the helper function `filter()`
-
 > **NOTE**: The `filters` do not apply immediately to the given `list` but we have to apply and activate them with the `apply()` and `activate()` methods on the `manager`.
 
 #### 🔁 Return Values
@@ -103,7 +102,6 @@ It allows you to apply, remove, toggle, reset, and finally activate filters on y
 | `toggle(filterName, payload?)` | Toggles the active state of a filter. If it was active, it becomes inactive, and vice-versa. | `manager` (chainable) |
 | `reset()`                      | Deactivates all filters and clears their active state.                                       | `manager` (chainable) |
 | `activate()`                   | Applies all active filters to the list and updates the `filtered` result.                    | `void`                |
-
 
 #### ⚠️ Notes
 

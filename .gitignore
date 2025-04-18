@@ -1,0 +1,42 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+lib/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+.babel_cache/
+.cache/
+coverage/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated
+*.swp
+
+# Test coverage reports
+coverage/
+
+# Optional: TypeScript build artifacts
+*.tsbuildinfo
+
+# Lerna/monorepo
+packages/*/node_modules/

@@ -1,10 +1,20 @@
 import { useEffect, useRef, useState } from "react";
+import { isEqual } from "lodash";
 
 export function filter(name, filter) {
     return {
         name,
         filter,
     };
+}
+
+function initFilters(filters) {
+    return () =>
+        filters.map((filter) => ({
+            ...filter,
+            isActive: false,
+            payload: null,
+        }));
 }
 
 /**
@@ -45,22 +55,22 @@ export function filter(name, filter) {
  * // Get the "active" filter object
  * const activeFilter = getFilter("active");
  */
-export function useFilter({ list, filters: fltrs = [] }) {
-    const [filters, setFilters] = useState(() =>
-        fltrs.map((filter) => ({
-            ...filter,
-            isActive: false,
-            payload: null,
-        }))
-    );
+export function useFilter({ list = [], filters: fltrs = [] }) {
+    const [filteredList, setFilteredList] = useState(list);
+    const [filters, setFilters] = useState(initFilters(fltrs));
 
-    const [filteredList, setFilteredList] = useState(() => list ?? []);
     const originalList = useRef(list);
+    const originalFilters = useRef(fltrs);
 
     useEffect(() => {
+        if (isEqual(originalList.current, list)) return;
+        if (isEqual(originalFilters.current, fltrs)) return;
+
         originalList.current = list;
-        setFilteredList(list ?? []);
-    }, [list])
+
+        setFilteredList(list);
+        setFilters(initFilters(fltrs));
+    }, [list, fltrs]);
 
     function setActivityOf(filterName, payload = null, activity) {
         setFilters((filters) =>
